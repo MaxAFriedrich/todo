@@ -17,7 +17,7 @@ def new_td(file_loc: str, fm: dict, raw: str, topic=None):
     if topic == None:
         import uuid
 
-        topic = fm["current"] = str(uuid.uuid1())
+        fm["current"] = topic = str(uuid.uuid1())
     from yaml import safe_dump
 
     fm_str = safe_dump(fm)
@@ -35,7 +35,7 @@ def rem_td(file_loc: str, topic: str):
 
     with open(file_loc, "r") as file:
         # with open(file_loc, "w") as out:
-            print(re.sub(regex, "", file.read()))
+        print(re.sub(regex, "", file.read()))
 
 
 def open_td(inp) -> str:
